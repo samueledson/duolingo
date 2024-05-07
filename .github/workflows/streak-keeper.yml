@@ -2,7 +2,7 @@ name: Keep my Duolingo streak
 
 on:
   schedule:
-    - cron: '*/15 * * * *'
+    - cron: '*/45 * * * *'
 
 jobs:
   study:
