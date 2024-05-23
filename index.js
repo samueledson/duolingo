@@ -104,16 +104,22 @@ try {
 					...session,
 					heartsLeft: 0,
 					startTime: (+new Date() - 60000) / 1000,
-					enableBonusPoints: false,
+					enableBonusPoints: true,
 					endTime: +new Date() / 1000,
 					failed: false,
 					maxInLessonStreak: 9,
 					shouldLearnThings: true,
+					happyHourBonusXp: 50,
+					perfectLessonXpBonus: 50,
+					hasBoost: true,
+					completedSegments: 3,
 				}),
 				headers,
 				method: "PUT",
 			},
 		).then((response) => response.json());
+
+		console.info(`+ ${response.xpGain} XP`);
 
 		xp += response.xpGain;
 	}
